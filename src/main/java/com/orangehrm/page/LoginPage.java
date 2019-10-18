@@ -1,8 +1,18 @@
 package com.orangehrm.page;
 
+import static org.testng.Assert.assertEquals;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.orangehrm.common.BrokenLinks;
 import com.orangehrm.common.WebDriverFactory;
 public class LoginPage {
 	@FindBy (id="txtUsername") WebElement elmUserName;
@@ -12,6 +22,7 @@ public class LoginPage {
 	@FindBy (xpath="//img[@alt='OrangeHRM on Facebook']") WebElement elmFacebook;
 	@FindBy (xpath="//img[@alt='OrangeHRM on twitter']") WebElement elmTwitter;
 	@FindBy (xpath="//img[@alt='OrangeHRM on youtube']") WebElement elmYouTube;
+	@FindBy (tagName="a") List<WebElement> elmUrll;
 	public LoginPage() {
 PageFactory.initElements(WebDriverFactory.DR, this); //PageFactory.initElements method is use to initialize elements of the page.
 
@@ -39,5 +50,11 @@ PageFactory.initElements(WebDriverFactory.DR, this); //PageFactory.initElements 
 		elmLogin.click();		
 		return new HomePage().verifywelcomelink();
 	}
+	
+	public LoginPage testLogin() throws MalformedURLException, IOException {
+		BrokenLinks.brokenLinkVerify(elmUrll);
+		return this;
+	
 
+}
 }

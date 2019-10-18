@@ -5,7 +5,7 @@
     <classes>
       <class name="com.orangehrm.test.LoginTest">
         <methods>
-          <include name="verifyLoginSuccessfull"/>
+          <include name="testLoginn"/>
         </methods>
       </class> <!-- com.orangehrm.test.LoginTest -->
     </classes>

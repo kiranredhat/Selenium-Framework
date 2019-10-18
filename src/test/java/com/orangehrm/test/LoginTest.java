@@ -1,4 +1,7 @@
 package com.orangehrm.test;
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +29,7 @@ public class LoginTest extends BaseSelenium {
 
 		}
 	}*/
+	
 /*	@Test 
 	public void verifyLoginSuccessfull() {
 		LoginPage LP=new LoginPage();
@@ -35,22 +39,25 @@ public class LoginTest extends BaseSelenium {
 		}
 	*/
 //@Test (dataProvider=("logindataFromCSV"))
-//public void verifyLoginSuccessfull(String strUserName, String strPassword) {
-//	LoginPage LP=new LoginPage();
-//	LP.loginArg(strUserName,strPassword);
-//
-//
-//	}
-//}
+public void verifyLoginSuccessfull1(String strUserName, String strPassword) {
+	LoginPage LP=new LoginPage();
+	LP.loginArg(strUserName,strPassword);
+
+	}
+
 
 
 
 	
-@Test (dataProvider=("excelDataProvider"))
+//@Test (dataProvider=("excelDataProvider"))
 public void verifyLoginSuccessfull(String strUserName, String strPassword) {
-	LoginPage LP=new LoginPage();
-	LP.loginArg(strUserName,strPassword);
+	LoginPage lp=new LoginPage();
+	lp.loginArg(strUserName, strPassword);
+	}
 
-
+@Test
+public void testLoginn() throws MalformedURLException, IOException {
+	LoginPage lp=new LoginPage();
+	lp.testLogin();
 	}
 }

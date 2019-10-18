@@ -61,18 +61,17 @@ public class BaseSelenium {
 
 		String strFilePath = getfilepath(m.getDeclaringClass());
 		FileInputStream fis = new FileInputStream(strFilePath);
+
 		XSSFWorkbook Wb = new XSSFWorkbook(fis);
 		String sheetname = m.getName();
 		System.out.println(sheetname);
 
 		XSSFSheet Ws = Wb.getSheet(sheetname);
-		int totalRows = Ws.getLastRowNum() + 1;
+		int totalRows = Ws.getLastRowNum();
 		int totalCols = Ws.getRow(0).getLastCellNum();
 		tabArray = new String[totalRows][totalCols];
-		for (int intRowCounter = 1; intRowCounter < totalRows; intRowCounter++)
-		{
-			for (int intColCounter = 0; intColCounter < totalCols; intColCounter++)
-			{
+		for (int intRowCounter = 0; intRowCounter < totalRows; intRowCounter++) {
+			for (int intColCounter = 0; intColCounter < totalCols; intColCounter++) {
 
 				XSSFCell Cell = Ws.getRow(intRowCounter).getCell(intColCounter);
 
@@ -92,5 +91,4 @@ public class BaseSelenium {
 		System.out.println("" + strfilepath);
 		return strfilepath;
 	}
-
 }
