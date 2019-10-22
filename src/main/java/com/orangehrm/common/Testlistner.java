@@ -28,7 +28,6 @@ public class Testlistner implements IInvokedMethodListener {
 			WebDriverFactory.DR.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 			WebDriverFactory.DR.get("http://127.0.0.1/orangehrm-3.3.1/symfony/web/index.php/auth/login"); // Navigate to
 																								// URL
-			//WebDriverFactory.DR.manage().window().maximize();
 			WebDriverFactory.DR.manage().window().maximize();
 		}
 	}

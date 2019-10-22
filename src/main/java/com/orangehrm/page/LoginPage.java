@@ -54,7 +54,5 @@ PageFactory.initElements(WebDriverFactory.DR, this); //PageFactory.initElements 
 	public LoginPage testLogin() throws MalformedURLException, IOException {
 		BrokenLinks.brokenLinkVerify(elmUrll);
 		return this;
-	
-
 }
 }
